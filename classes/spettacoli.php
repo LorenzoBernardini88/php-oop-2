@@ -1,4 +1,7 @@
 <?php
+require_once __DIR__. "/film.php";
+require_once __DIR__. "/sala.php";
+
 class Spettacolo {
     private $data;
     private $orario;
