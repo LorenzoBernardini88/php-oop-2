@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__. "./salaImmersiva.php";
+require_once __DIR__. "/sala.php";
 
 class Immersiva extends sala {
 

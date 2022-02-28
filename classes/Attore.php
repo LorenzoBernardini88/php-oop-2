@@ -1,5 +1,5 @@
 <?php
-class Attori {
+class Attore{
     private $nome;
     private $cognome;
     private $età;

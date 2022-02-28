@@ -6,7 +6,7 @@ class Sala {
         
     public function __construct($_nome,$_capienza){
         $this->nome = $_nome;
-        $this->cognome = $_capienza;
+        $this->capienza = $_capienza;
     }
 }
     
