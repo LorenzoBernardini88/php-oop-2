@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__. "/sala.php";
+require_once __DIR__. "/Sala.php";
 
-class Immersiva extends sala {
+class Immersiva extends Sala {
 
     private $effetti;
 

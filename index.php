@@ -3,10 +3,10 @@
     error_reporting(E_ALL);
     ini_set('display_errors', TRUE);
     ini_set('display_startup_errors', TRUE);
-    require_once __DIR__. '/classes/sala.php';
-    require_once __DIR__. '/classes/salaImmersiva.php';
+    require_once __DIR__. '/classes/Sala.php';
+    require_once __DIR__. '/classes/Immersiva.php';
     require_once __DIR__. '/classes/Spettacolo.php';
-    require_once __DIR__. '/classes/film.php';
+    require_once __DIR__. '/classes/Film.php';
     require_once __DIR__. '/classes/Attore.php';
 
     $attori = [
@@ -15,18 +15,33 @@
         new Attore('Davide','Masa',25),
         new Attore('Matteo','Pompei',27),
     ];
+    
     $films = [
-        new Film('batam','Stojkovic',10,2022,[$attori[0],$attori[1]]),
-        new Film('spidermae','Ficuciello',26,2021,$attori),
-        new Film('Davide','Masa',25,2019,[new Attore('Daniele','Ficuciello',26), new Attore('Daniele','Ficuciello',26)]),
+        new Film('Batman','Avventura',2,2022,[$attori[0],$attori[1]]),
+        new Film('Lo Hobbit','Fantasy',1,2021,$attori),
+        new Film('Avenger','Azione',3,2019,[new Attore('Daniele','Ficuciello',26), new Attore('Daniele','Ficuciello',26)]),
     ];
-    array_push($films[0]->attori,$attori[2]);
+    
+    $sale = [
+        new Sala('1',120),
+        new Sala('2',180),
+        new Sala('3',90)
+    ];
 
-    $spettacolo = new Spettacolo('2022-02-01','10:30');
-    $spettacolo->film = $films[0];
+    $spettacoli = [
+        new Spettacolo('2022-02-01','20:45',$films[0],$sale[0]),
+        new Spettacolo('2018-03-11','20:45',$films[1],$sale[1]),
+        new Spettacolo('2020-10-25','20:45',$films[2],$sale[2])
+    ];
 
-    $spettacolo->sala = new Sala('1',120);
-    var_dump($spettacolo);
-
+    var_dump($spettacoli);
     ?>
 </pre>
+
+<!-- // array_push($films[0]->attori,$attori[2]);
+
+    // $spettacolo = new Spettacolo('2022-02-01','10:30');
+    // $spettacolo->film = $films[0];
+
+    // $spettacolo->sala = new Sala('1',120);
+    // var_dump($spettacolo); -->
