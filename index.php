@@ -6,10 +6,6 @@
     require_once __DIR__. './classes/film.php';
 
 
-    $Film->attori = [
-        new Attori('Milan','Stojkovic',21),
-        new Attori('Daniele','Ficuciello',26),
-        new Attori('Davide','Ma'),
-    ]
+
     ?>
 </pre>
