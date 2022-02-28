@@ -24,15 +24,16 @@
     
     $sale = [
         new Sala('1',120),
-        new Sala('2',180),
+        new Sala('2',100),
         new Sala('3',90)
     ];
-
+    
     $spettacoli = [
         new Spettacolo('2022-02-01','20:45',$films[0],$sale[0]),
         new Spettacolo('2018-03-11','20:45',$films[1],$sale[1]),
         new Spettacolo('2020-10-25','20:45',$films[2],$sale[2])
     ];
+    
 
     var_dump($spettacoli);
     ?>
