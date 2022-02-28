@@ -27,7 +27,7 @@
     $sale = [
         new Sala('1',120),
         new Sala('2',100),
-        new Sala('3',90)
+        new Immersiva('3',90,'vibrazioni')
     ];
     
     $spettacoli = [
