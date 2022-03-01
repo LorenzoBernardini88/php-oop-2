@@ -67,6 +67,7 @@
     <title>oop-2-pt2</title>
 </head>
 <body>
+
     <h2>Esercizio 1</h2>
     <p>Recupera l’elenco delle sale con relative informazioni, facendo particolare attenzione 
     alle informazioni aggiuntive per le sale immersive.</p>
@@ -78,6 +79,11 @@
     <h2>Esercizio 2</h2>
     <p>Recuperare la capienza totale del cinema considerando tutte le sale a disposizione.</p>
     <?php
+        error_reporting(E_ALL);
+        ini_set('display_errors', TRUE);
+        ini_set('display_startup_errors', TRUE);
+
+        $sumCapienza=0;
         foreach($sale as $elemento){
             $sumCapienza += $elemento->getCapienza();
         }
@@ -86,13 +92,18 @@
     <h2>Esercizio 3</h2>
     <p>Recuperare la capienza totale del cinema considerando tutte le sale a disposizione.</p>
     <?php
-    error_reporting(E_ALL);
-    ini_set('display_errors', TRUE);
-    ini_set('display_startup_errors', TRUE);
-    for($i=0; $i<count($spettacoli[0]->getOrario()); $i++){
-        $numProiect = $i++;
-    }
-    echo "Le Proiezioni totali del film:"." ".$films[0]->getTitolo()." "."nel giorno:"." ".$spettacoli[0]->getData()." "."sono:"." ".$numProiect;
+        error_reporting(E_ALL);
+        ini_set('display_errors', TRUE);
+        ini_set('display_startup_errors', TRUE);
+        for($i=1; $i<=count($spettacoli[0]->getOrario()); $i++){
+            $numProiect = $i++;
+        }
+        echo "Le Proiezioni totali del film:"." ".$films[0]->getTitolo()." "."nel giorno:"." ".$spettacoli[0]->getData()." "."sono:"." ".$numProiect;
+    ?>
+    <h2>Esercizio 4</h2>
+    <p>Stabilito un giorno, recupera l’orario di fine dell’ultimo spettacolo.</p>
+    <?php
+    
     ?>
 </body>
 </html>
