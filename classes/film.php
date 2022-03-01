@@ -19,7 +19,9 @@ class Film {
         $this->anno = $_anno;
         $this->attori = $_attori;
     }
-
+    public function getTitolo(){
+        return $this->titolo;
+    }
 }
 
 

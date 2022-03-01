@@ -31,9 +31,9 @@
     ];
     
     $spettacoli = [
-        new Spettacolo('2022-02-01','20:45',$films[0],$sale[0]),
-        new Spettacolo('2018-03-11','10:30',$films[1],$sale[1]),
-        new Spettacolo('2020-10-25','22:45',$films[2],$sale[2])
+        new Spettacolo('2022-02-01',['10:30','12:00','16:00','20:45','22,45'],$films[0],$sale[0]),
+        new Spettacolo('2018-03-11',['10:30','12:00','16:00','20:45','22,45'],$films[1],$sale[1]),
+        new Spettacolo('2020-10-25',['10:30','12:00','16:00','20:45','22:45'],$films[2],$sale[2])
     ];
     
     //var_dump($spettacoli);
@@ -82,6 +82,17 @@
             $sumCapienza += $elemento->getCapienza();
         }
         echo "CAPIENZA TOTALE CINEMA:".$sumCapienza." "."Posti.";
+    ?>
+    <h2>Esercizio 3</h2>
+    <p>Recuperare la capienza totale del cinema considerando tutte le sale a disposizione.</p>
+    <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', TRUE);
+    ini_set('display_startup_errors', TRUE);
+    for($i=0; $i<count($spettacoli[0]->getOrario()); $i++){
+        $numProiect = $i++;
+    }
+    echo "Le Proiezioni totali del film:"." ".$films[0]->getTitolo()." "."nel giorno:"." ".$spettacoli[0]->getData()." "."sono:"." ".$numProiect;
     ?>
 </body>
 </html>

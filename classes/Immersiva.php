@@ -13,6 +13,4 @@ class Immersiva extends Sala {
     public function getInfo(){
         return "NOME:{$this->nome} CAPIENZA:{$this->capienza} EFFETTI:".implode(',',$this->effetti);
     }
-
-
 }
