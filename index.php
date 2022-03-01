@@ -41,7 +41,7 @@
     //CONSEGNA 2022-03-01:
     // 1) Recupera l’elenco delle sale con relative informazioni, facendo particolare attenzione 
     //     alle informazioni aggiuntive per le sale immersive.
-        var_dump($sale);
+        //var_dump($sale);
 
     // 2) Recuperare la capienza totale del cinema considerando tutte le sale a disposizione.
 
@@ -74,6 +74,14 @@
         foreach($sale as $elemento){
             echo " {$elemento->getInfo()}  <br>";
         }
+    ?>
+    <h2>Esercizio 2</h2>
+    <p>Recuperare la capienza totale del cinema considerando tutte le sale a disposizione.</p>
+    <?php
+        foreach($sale as $elemento){
+            $sumCapienza += $elemento->getCapienza();
+        }
+        echo "CAPIENZA TOTALE CINEMA:".$sumCapienza." "."Posti.";
     ?>
 </body>
 </html>

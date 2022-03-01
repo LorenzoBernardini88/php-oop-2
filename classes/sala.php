@@ -12,6 +12,9 @@ class Sala {
     public function getInfo(){
         return "NOME:{$this->nome} CAPIENZA:{$this->capienza}";
     }
+    public function getCapienza(){
+        return $this->capienza;
+    }
 }
     
     
