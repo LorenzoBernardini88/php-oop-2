@@ -1,9 +1,9 @@
 <pre>
     <?php
 
-    error_reporting(E_ALL);
-    ini_set('display_errors', TRUE);
-    ini_set('display_startup_errors', TRUE);
+    // error_reporting(E_ALL);
+    // ini_set('display_errors', TRUE);
+    // ini_set('display_startup_errors', TRUE);
 
     require_once __DIR__. '/classes/Sala.php';
     require_once __DIR__. '/classes/Immersiva.php';
@@ -32,11 +32,20 @@
     
     $spettacoli = [
         new Spettacolo('2022-02-01','20:45',$films[0],$sale[0]),
-        new Spettacolo('2018-03-11','20:45',$films[1],$sale[1]),
-        new Spettacolo('2020-10-25','20:45',$films[2],$sale[2])
+        new Spettacolo('2018-03-11','10:30',$films[1],$sale[1]),
+        new Spettacolo('2020-10-25','22:45',$films[2],$sale[2])
     ];
     
-    var_dump($spettacoli);
+    //var_dump($spettacoli);
+
+    //CONSEGNA 2022-03-01:
+    // 1) Recupera l’elenco delle sale con relative informazioni, facendo particolare attenzione 
+    //     alle informazioni aggiuntive per le sale immersive.
+        var_dump($sale);
+    // 2) Recuperare la capienza totale del cinema considerando tutte le sale a disposizione.
+    // 3) Stabilito un giorno e un film, recuperare quante proiezioni totali di quel film ci saranno.
+    // 4) Stabilito un giorno, recupera l’orario di fine dell’ultimo spettacolo.
+
     ?>
 </pre>
 
@@ -48,3 +57,4 @@
 
     // $spettacolo->sala = new Sala('1',120);
     // var_dump($spettacolo); -->
+
