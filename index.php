@@ -19,9 +19,9 @@
     ];
     
     $films = [
-        new Film('Batman','Avventura','Christopher Nolan',2,2022,[$attori[0],$attori[1]]),
-        new Film('Lo Hobbit','Fantasy','Peter Jackson',1,2021,$attori),
-        new Film('Avenger','Azione','Joss Whedon',3,2019,[new Attore('Daniele','Ficuciello',26), new Attore('Daniele','Ficuciello',26)]),
+        new Film('Batman','Avventura','Christopher Nolan',120,2022,[$attori[0],$attori[1]]),
+        new Film('Lo Hobbit','Fantasy','Peter Jackson',60,2021,$attori),
+        new Film('Avenger','Azione','Joss Whedon',180,2019,[new Attore('Daniele','Ficuciello',26), new Attore('Daniele','Ficuciello',26)]),
     ];
     
     $sale = [
@@ -103,7 +103,9 @@
     <h2>Esercizio 4</h2>
     <p>Stabilito un giorno, recupera l’orario di fine dell’ultimo spettacolo.</p>
     <?php
-    echo $spettacoli[0]->getOrario()[count($spettacoli[0]->getOrario()) - 1];
+    $fineFilm = intval($spettacoli[0]->getOrario()[count($spettacoli[0]->getOrario()) - 1]) + $films[0]->getDurata();
+    echo $fineFilm;
+    //echo end($spettacoli[0]->getOrario()); 
     ?>
 </body>
 </html>
