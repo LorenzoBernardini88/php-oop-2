@@ -27,7 +27,7 @@
     $sale = [
         new Sala('1',120),
         new Sala('2',100),
-        new Immersiva('3',90,'vibrazioni')
+        new Immersiva('3',90,['vibrazioni','fumo'])
     ];
     
     $spettacoli = [
@@ -42,7 +42,9 @@
     // 1) Recupera l’elenco delle sale con relative informazioni, facendo particolare attenzione 
     //     alle informazioni aggiuntive per le sale immersive.
         var_dump($sale);
+
     // 2) Recuperare la capienza totale del cinema considerando tutte le sale a disposizione.
+
     // 3) Stabilito un giorno e un film, recuperare quante proiezioni totali di quel film ci saranno.
     // 4) Stabilito un giorno, recupera l’orario di fine dell’ultimo spettacolo.
 
@@ -54,7 +56,24 @@
 
     // $spettacolo = new Spettacolo('2022-02-01','10:30');
     // $spettacolo->film = $films[0];
-
     // $spettacolo->sala = new Sala('1',120);
     // var_dump($spettacolo); -->
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oop-2-pt2</title>
+</head>
+<body>
+    <h2>Esercizio 1</h2>
+    <p>Recupera l’elenco delle sale con relative informazioni, facendo particolare attenzione 
+    alle informazioni aggiuntive per le sale immersive.</p>
+    <?php
+        foreach($sale as $elemento){
+            echo " {$elemento->getInfo()}  <br>";
+        }
+    ?>
+</body>
+</html>
