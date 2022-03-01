@@ -22,6 +22,9 @@ class Film {
     public function getTitolo(){
         return $this->titolo;
     }
+    public function getDurata(){
+        return $this->durata;
+    }
 }
 
 

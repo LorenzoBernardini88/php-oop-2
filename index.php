@@ -103,7 +103,7 @@
     <h2>Esercizio 4</h2>
     <p>Stabilito un giorno, recupera l’orario di fine dell’ultimo spettacolo.</p>
     <?php
-    
+    echo $spettacoli[0]->getOrario()[count($spettacoli[0]->getOrario()) - 1];
     ?>
 </body>
 </html>
