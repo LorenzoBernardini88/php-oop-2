@@ -31,8 +31,8 @@
     ];
     
     $spettacoli = [
-        new Spettacolo('2022-02-01',['10:30','12:00','16:00','20:45','22,45'],$films[0],$sale[0]),
-        new Spettacolo('2018-03-11',['10:30','12:00','16:00','20:45','22,45'],$films[1],$sale[1]),
+        new Spettacolo('2022-02-01',['10:30','12:00','16:00','20:45','22:45'],$films[0],$sale[0]),
+        new Spettacolo('2018-03-11',['10:30','12:00','16:00','20:45','22:45'],$films[1],$sale[1]),
         new Spettacolo('2020-10-25',['10:30','12:00','16:00','20:45','22:45'],$films[2],$sale[2])
     ];
     
@@ -46,6 +46,7 @@
     // 2) Recuperare la capienza totale del cinema considerando tutte le sale a disposizione.
 
     // 3) Stabilito un giorno e un film, recuperare quante proiezioni totali di quel film ci saranno.
+    
     // 4) Stabilito un giorno, recupera l’orario di fine dell’ultimo spettacolo.
 
     ?>
@@ -103,9 +104,15 @@
     <h2>Esercizio 4</h2>
     <p>Stabilito un giorno, recupera l’orario di fine dell’ultimo spettacolo.</p>
     <?php
-    $fineFilm = intval($spettacoli[0]->getOrario()[count($spettacoli[0]->getOrario()) - 1]) + $films[0]->getDurata();
-    echo $fineFilm;
-    //echo end($spettacoli[0]->getOrario()); 
+    //$fineFilm = strtotime($spettacoli[0]->getOrario()[count($spettacoli[0]->getOrario()) - 1]) + $films[0]->getDurata();
+    $ultimoSpett = $spettacoli[0]->getOrario()[count($spettacoli[0]->getOrario()) - 1];
+    list($ore,$minuti)=explode(':',$ultimoSpett);
+    $durataFilm = $films[0]->getDurata();
+    $fineFilm = $ore*60+$minuti+$durataFilm;
+    $ore = $fineFilm / 60;
+    $minuti = $fineFilm%60;
+    $ore  %= 24; //restituisce il resto se supera 24 (ore), altrimenti resta uguale.
+    echo $ore.":".$minuti
     ?>
 </body>
 </html>
